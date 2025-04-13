@@ -2,11 +2,10 @@ import type { NavItems } from "./types";
 
 export const SITE = {
 	// Your site's detail?
-	title: "牛久散歩ノート",
-	name: "牛久散歩ノート",
-	description: "歩く、牛久。",
-	url: "https://astro-ink.vercel.app",
-	githubUrl: "https://github.com/one-aalam/astro-ink",
+	title: "聖地巡りえら",
+	name: "聖地巡りえら",
+	description: "ラブライブ！スーパースター‼聖地巡礼マップ",
+	url: "https://nato-blooming.github.io",
 	listDrafts: true,
 	image:
 		"https://raw.githubusercontent.com/one-aalam/astro-ink/main/public/astro-banner.png",

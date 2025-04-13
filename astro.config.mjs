@@ -18,7 +18,7 @@ import remarkCodeTitles from 'remark-code-titles'
 // https://astro.build/config
 export default defineConfig( /** @type {import('astro').AstroUserConfig} */{
   output: 'static',
-  site: 'https://nato-blooming.github.io/ushiku',
+  site: 'https://nato-blooming.github.io/',
   markdown: {
     syntaxHighlight: 'shiki',
     shikiConfig: {
