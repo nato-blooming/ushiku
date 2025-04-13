@@ -19,9 +19,28 @@ const entry = await getEntryBySlug('blog', slug!)
 
 const { id, collection, data } = entry
 const { Content } = await entry.render()
+
+import MapViewer from '$/components/MapViewer.astro';
+
+const posts = await getCollection('blog');
+const places = posts
+  .filter(p => p.data.lat && p.data.lng)
+  .map(p => ({
+    title: p.data.title,
+    lat: p.data.lat,
+    lng: p.data.lng,
+    url: `/blog/${p.slug}`,
+  }));
 ---
 <PostLayout meta={{id, collection, slug }} content={data} >
     <Content components={{
         code: Code
     }}/>
+    
+    <MapViewer 
+        places={places}
+        targetUrl={`/blog/${slug}`} 
+        size=15
+        height="300px"
+    />
 </PostLayout>
