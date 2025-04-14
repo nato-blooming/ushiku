@@ -30,6 +30,7 @@ const places = posts
     lat: p.data.lat,
     lng: p.data.lng,
     url: `/blog/${p.slug}`,
+    gmap: p.data.gmap,
   }));
 ---
 <PostLayout meta={{id, collection, slug }} content={data} >

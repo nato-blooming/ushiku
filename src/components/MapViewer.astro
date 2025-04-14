@@ -87,31 +87,28 @@ const {
       }).addTo(map);
 
       if (isTarget) {
-
-const googleMapControl = L.Control.extend({
-  options: {
-    position: 'topright' // ← 右上に表示
-  },
-  onAdd: function () {
-    const container = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
-    container.style.backgroundColor = 'white';
-    container.style.padding = '5px';
-    container.style.cursor = 'pointer';
-    container.title = 'Google Mapで開く';
-    container.innerHTML = '🔗Google Mapで開く';
-    container.onclick = function () {
-      const center = map.getCenter(); // 現在の中心位置
-      const lat = center.lat;
-      const lng = center.lng;
-      const url = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
-      window.open(url, '_blank');
-    };
-    return container;
-  }
-});
-map.addControl(new googleMapControl());
-
-
+        const googleMapControl = L.Control.extend({
+          options: {
+            position: 'topright' // ← 右上に表示
+          },
+          onAdd: function () {
+            const container = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
+            container.style.backgroundColor = 'white';
+            container.style.padding = '5px';
+            container.style.cursor = 'pointer';
+            container.title = 'Google Mapで開く';
+            container.innerHTML = '🔗Google Mapで開く';
+            container.style.color = 'black';
+            container.onclick = function () {
+              const lat = `${place.lat}`;
+              const lng = `${place.lng}`;
+              const url = `${place.gmap}`; 
+              window.open(url, '_blank');
+            };
+            return container;
+          }
+        });
+        map.addControl(new googleMapControl());
 
         marker.bindPopup(`${place.title}`);
       } else {

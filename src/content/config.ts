@@ -11,6 +11,7 @@ const blogCollection = defineCollection({
 		lat: z.number(),
 		lng: z.number(),
 		id: z.number(),
+		gmap: z.string(),
 	}),
 });
 
