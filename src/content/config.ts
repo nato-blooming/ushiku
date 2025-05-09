@@ -26,7 +26,16 @@ const courseCollection = defineCollection({
         }),
 });
 
+const photoPagesCollection = defineCollection({
+        schema: z.object({
+		image: z.string(),
+		contributor: z.string(),
+		description: z.string(),
+        }),
+});
+
 export const collections = {
 	blog: blogCollection,
 	course: courseCollection,
+	photo_pages: photoPagesCollection,
 };
